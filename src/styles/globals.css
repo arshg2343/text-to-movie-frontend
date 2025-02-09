@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	margin: 0;
+	background: #0c0c0c;
+	color: white;
+	font-family: "Courier Prime", sans-serif;
+}
+
+.input-cursor::after {
+	content: "|";
+	animation: cursor 1.1s infinite step-end;
+}
+
+@keyframes cursor {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+@layer base {
+	:root {
+		--background: 0 0% 0%;
+		--foreground: 142 72% 29%;
+
+		--card: 0 0% 0%;
+		--card-foreground: 142 72% 29%;
+
+		--popover: 0 0% 0%;
+		--popover-foreground: 142 72% 29%;
+
+		--primary: 142 72% 29%;
+		--primary-foreground: 0 0% 0%;
+
+		--secondary: 142 30% 10%;
+		--secondary-foreground: 142 72% 29%;
+
+		--muted: 142 30% 10%;
+		--muted-foreground: 142 72% 29%;
+
+		--accent: 142 30% 10%;
+		--accent-foreground: 142 72% 29%;
+
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 142 72% 29%;
+
+		--border: 142 72% 29%;
+		--input: 142 72% 29%;
+		--ring: 142 72% 29%;
+
+		--radius: 0.5rem;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+}

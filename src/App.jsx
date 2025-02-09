@@ -27,7 +27,7 @@ export default function App() {
 
 		try {
 			const response = await fetch(
-				"https://movie-recommendation-be-production.up.railway.app//",
+				"https://movie-recommendation-be-production.up.railway.app/",
 				{
 					method: "POST",
 					headers: {

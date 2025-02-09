@@ -32,14 +32,13 @@ export function LandingPage({ onSubmit }) {
 
 					<div className="max-w-3xl">
 						<p className="text-zinc-400 text-sm font-mono mb-8">
-							Create B-Rep CAD files and meshes from natural
-							language prompts.
+							Get movie recommendations based on a text prompt.
 							<br />
 							Powered by the{" "}
 							<span className="text-emerald-400">
-								ML-EPHANT
+								Nvidia llama-3.1 Nemotro 70B Instruct
 							</span>{" "}
-							API from Zoo.
+							API from OpenRouter.
 						</p>
 
 						<ExamplePrompts onSelect={onSubmit} />

@@ -26,7 +26,7 @@ export function LandingPage({ onSubmit }) {
 					<div className="w-full max-w-none mb-8">
 						<PromptInput
 							onSubmit={onSubmit}
-							placeholder="a spur gear with 13 teeth"
+							placeholder="Describe a movie or get movies from an Actor or a Director"
 						/>
 					</div>
 

@@ -13,6 +13,19 @@ export default function App() {
 	const [loading, setLoading] = useState(false);
 	const [showLanding, setShowLanding] = useState(true);
 	const [previousPrompts, setPreviousPrompts] = useState([]);
+	const [isMobile, setIsMobile] = useState(false);
+
+	// Detect screen size and update isMobile state
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth < 768); // Set breakpoint for mobile
+		};
+
+		handleResize(); // Initial check
+		window.addEventListener("resize", handleResize);
+
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
 
 	useEffect(() => {
 		setPreviousPrompts(getPrompts());
@@ -57,11 +70,14 @@ export default function App() {
 
 	return (
 		<div className="flex min-h-screen bg-black">
-			<Sidebar
-				prompts={previousPrompts}
-				onPromptSelect={handleSubmit}
-				onNewPrompt={() => setShowLanding(true)}
-			/>
+			{/* Render Sidebar only if not in mobile mode */}
+			{!isMobile && (
+				<Sidebar
+					prompts={previousPrompts}
+					onPromptSelect={handleSubmit}
+					onNewPrompt={() => setShowLanding(true)}
+				/>
+			)}
 
 			<main className="flex-1 p-8 overflow-y-auto">
 				<div className="max-w-6xl mx-auto">

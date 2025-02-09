@@ -39,9 +39,11 @@ export function MovieResults({ movieData, isLoading }) {
 		return (
 			<div className="flex justify-center items-center h-64">
 				<div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-green-500"></div>
-				<p className="mt-4 text-sm text-white">
-					Please wait while we fetch your movie recommendations...
-				</p>
+				<div className="ml-4">
+					<p className="mt-4 text-sm text-white">
+						Please wait while we fetch your movie recommendations...
+					</p>
+				</div>
 			</div>
 		);
 	}

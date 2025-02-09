@@ -26,13 +26,16 @@ export default function App() {
 		setPreviousPrompts(getPrompts());
 
 		try {
-			const response = await fetch("http://localhost:8080/", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ prompt: newPrompt }),
-			});
+			const response = await fetch(
+				"https://movie-recommendation-be-production.up.railway.app//",
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({ prompt: newPrompt }),
+				}
+			);
 
 			if (!response.ok) {
 				throw new Error(`HTTP error! status: ${response.status}`);
